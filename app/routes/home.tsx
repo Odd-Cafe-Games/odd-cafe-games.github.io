@@ -1,6 +1,5 @@
 import FullScreenBanner from "../components/fullScreenBanner";
 import type { Route } from "./+types/home";
-import Header from "../components/header";
 import Footer from "../components/footer";
 import ProjectsSection from "../components/projectsSection";
 
