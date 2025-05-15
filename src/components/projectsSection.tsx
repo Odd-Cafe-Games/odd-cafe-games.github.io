@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 const images = [
   '/assets/kittyMaker/kittyHome.png',
@@ -8,6 +8,14 @@ const images = [
 ];
 
 const ProjectsSection: React.FC = () => {
+
+  // Preload images on mount
+  useEffect(() => {
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
