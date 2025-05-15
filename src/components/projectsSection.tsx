@@ -35,34 +35,37 @@ const ImageCarousel: React.FC = () => {
         let opacity = "opacity-0";
 
         if (relativeIndex === 0) {
-          transform = "translate-x-0 scale-100";
+          transform = "translate-x-0 scale-100 rotate-0";
           zIndex = 30;
           opacity = "opacity-100";
         } else if (relativeIndex === 1) {
-          transform = "translate-x-[10%] scale-[0.9]";
+          transform = "translate-x-[10%] scale-[0.9] rotate-6";
           zIndex = 20;
           opacity = "opacity-30";
         } else if (relativeIndex === total - 1) {
-          transform = "-translate-x-[10%] scale-[0.9]";
+          transform = "-translate-x-[10%] scale-[0.9] -rotate-4";
           zIndex = 20;
           opacity = "opacity-30";
         }
 
         return (
-          <img
-            key={index}
-            src={src}
-            alt={`Slide ${index + 1}`}
-            className={`
-            absolute top-0 left-0 right-0 mx-auto w-[100%] h-full object-cover rounded-lg shadow-lg
+        <div
+          key={index}
+          className={`
+            absolute top-0 left-0 right-0 mx-auto w-[80%] h-full flex items-center justify-center
             transition-all duration-500 ease-in-out
             ${transform} ${opacity}
           `}
-            style={{
-              transformOrigin: "center center",
-              zIndex,
-            }}
-          />
+          style={{ zIndex }}
+        >
+          <div className="bg-white p-2 shadow-md w-full h-full flex items-center justify-center">
+            <img
+              src={src}
+              alt={`Slide ${index + 1}`}
+              className="object-cover w-full h-full"
+            />
+          </div>
+        </div>
         );
       })}
 
