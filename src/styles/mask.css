@@ -1,0 +1,30 @@
+.mask-fade {
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  -webkit-mask-size: 0% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  mask-size: 0% 100%;
+  mask-repeat: no-repeat;
+  opacity: 0;
+}
+
+@keyframes maskReveal {
+  from {
+    opacity: 1;
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
+  }
+  to {
+    opacity: 0;
+    mask-size: 0% 100%;
+    -webkit-mask-size: 0% 100%;
+  }
+}
+
+.mask-fade.hidden {
+  pointer-events: none;
+}
+
+.mask-fade.animate {
+  animation: maskReveal 1.5s ease forwards;
+}
