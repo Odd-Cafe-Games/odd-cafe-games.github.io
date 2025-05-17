@@ -12,7 +12,6 @@ const FullScreenBanner: React.FC<BannerProps> = ({isNight, handleNightToggle}) =
   const [animating, setAnimating] = useState(false)
 
   const animateDayTransition = () => {
-    if (animating) return;
     handleNightToggle();
     setAnimating(true);
     setTimeout(() => setAnimating(false), 1500); // match animation time

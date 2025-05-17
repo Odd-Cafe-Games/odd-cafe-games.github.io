@@ -5,6 +5,7 @@
   mask-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   mask-size: 0% 100%;
   mask-repeat: no-repeat;
+  pointer-events: none;
   opacity: 0;
 }
 
