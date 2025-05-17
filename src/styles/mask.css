@@ -22,10 +22,6 @@
   }
 }
 
-.mask-fade.hidden {
-  pointer-events: none;
-}
-
 .mask-fade.animate {
   animation: maskReveal 1.5s ease forwards;
 }

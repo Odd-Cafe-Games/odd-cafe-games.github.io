@@ -1,5 +1,5 @@
 import Header from "./header"
-import {useState} from "react"
+import { useState, useRef } from "react"
 import "../styles/mask.css"
 
 type BannerProps = {
@@ -10,11 +10,22 @@ type BannerProps = {
 const FullScreenBanner: React.FC<BannerProps> = ({isNight, handleNightToggle}) => {
 
   const [animating, setAnimating] = useState(false)
+  const timeoutRef = useRef<number | null>(null);
+  const bannerRef = useRef<HTMLDivElement>(null);
 
   const animateDayTransition = () => {
     handleNightToggle();
+    if(timeoutRef.current !== null) {
+      clearTimeout(timeoutRef.current);
+      const e1 = bannerRef.current;
+      if(e1) {
+        e1.classList.remove('animate');
+        void e1.offsetWidth; //Force reload
+        e1.classList.add('animate')
+      }
+    }
     setAnimating(true);
-    setTimeout(() => setAnimating(false), 1500); // match animation time
+    timeoutRef.current = window.setTimeout(() => setAnimating(false), 1500);
   };
 
   return (
@@ -29,8 +40,9 @@ const FullScreenBanner: React.FC<BannerProps> = ({isNight, handleNightToggle}) =
         </div>
 
         <div
+              ref={bannerRef}
               className={`absolute w-full h-full bg-cover bg-center mask-fade ${
-                animating ? 'animate' : 'hidden'
+                animating ? 'animate' : ''
               }`}
               style={{ backgroundImage: isNight ? `url('/assets/bannerday.png')`: `url('assets/banner.png')`, zIndex: 2}}
         >
