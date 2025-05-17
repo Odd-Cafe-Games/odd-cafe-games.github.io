@@ -7,6 +7,10 @@ const images = [
   "/assets/kittyMaker/sistersVN.png",
 ];
 
+type ProjectsProps = {
+  isNight: boolean;
+};
+
 const ImageCarousel: React.FC = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -89,9 +93,9 @@ const ImageCarousel: React.FC = () => {
   </>
 };
 
-const ProjectsSection: React.FC = () => {
+const ProjectsSection: React.FC<ProjectsProps> = ({isNight}) => {
   return (
-    <section className="min-h-screen w-full flex flex-col md:flex-row items-center justify-center px-6 py-12">
+    <section className={`min-h-screen w-full flex flex-col md:flex-row items-center justify-center px-6 py-12 ${isNight ? 'dark-theme' : 'light-theme'}`}>
       {/* Image and controls */}
       <div
         id="Projects"
@@ -102,10 +106,10 @@ const ProjectsSection: React.FC = () => {
 
       {/* Text content */}
       <div className="w-full md:w-1/2 text-center md:text-left space-y-4">
-        <h1 className="text-4xl md:text-6xl font-bold text-indigo-500">
+        <h1 className={`text-4xl md:text-6xl font-bold ${isNight ? 'text-indigo-500': 'text-lime-600'}`}>
           Kitty Maker
         </h1>
-        <p className="text-lg md:text-xl text-gray-400">
+        <p className={`text-lg md:text-xl ${isNight ? 'text-gray-400': 'text-neutral-600'}`}>
           Through various circumstances, you've adopted a strange white kitten,
           and are in charge of raising her.
           <br />

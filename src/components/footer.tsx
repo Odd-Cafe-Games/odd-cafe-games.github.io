@@ -1,9 +1,13 @@
 import React from 'react';
 import { Twitter, Globe } from 'lucide-react'; // Twitter icon + a placeholder for Bluesky
 
-const Footer: React.FC = () => {
+type FooterProps = {
+  isNight: boolean
+}
+
+const Footer: React.FC<FooterProps> = ({isNight}) => {
   return (
-    <footer className="w-full bg-gray-900 text-white py-12 px-6">
+    <footer className={`w-full py-12 px-6 ${isNight ? 'dark-footer': 'light-footer'}`}>
       <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-6">
         {/* Left side: Social links with icons */}
         <div className="space-y-2 text-center md:text-left">
@@ -32,7 +36,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Right side: Email */}
-        <div className="text-sm text-gray-400 text-center md:text-right">
+        <div className={`text-sm text-center md:text-right ${isNight ? 'text-gray-400' : 'text-gray-800'}`}>
           <p>
             Email:{" "}
             <a

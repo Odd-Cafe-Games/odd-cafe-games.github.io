@@ -2,6 +2,7 @@ import FullScreenBanner from "../components/fullScreenBanner";
 import type { Route } from "./+types/home";
 import Footer from "../components/footer";
 import ProjectsSection from "../components/projectsSection";
+import {useState} from "react"
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -11,9 +12,15 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
+  const [isNight, setIsNight] = useState(true)
+
+  const toggleNight = () => {
+    setIsNight(!isNight)
+  }
+
   return <h1 className="text-3x1 font-bold">
-          <FullScreenBanner/>
-          <ProjectsSection/>
-          <Footer/>
+          <FullScreenBanner isNight={isNight} handleNightToggle={toggleNight}/>
+          <ProjectsSection isNight={isNight}/>
+          <Footer isNight={isNight}/>
           </h1>;
       }

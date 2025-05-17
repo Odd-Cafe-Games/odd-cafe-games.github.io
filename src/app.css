@@ -11,11 +11,27 @@
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
-
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
-
   scroll-behavior: smooth;
+
+  transition: background-color 0.7s, color 0.7s;
+}
+
+div, section {
+  transition: background-color 0.7s, color 0.7s;
+}
+
+.dark-theme {
+  @apply bg-gray-950 text-white
+}
+
+.light-theme {
+  @apply bg-amber-100 text-gray-800
+}
+
+.dark-footer {
+  @apply bg-gray-900 text-white
+}
+
+.light-footer {
+  @apply bg-neutral-300 text-gray-900
 }
