@@ -7,19 +7,22 @@ const images = [
   "/assets/kittyMaker/sistersVN.png",
 ];
 
-const mission_statement = ""
+const aboutStatement = "Odd Cafe Games is an ongoing project to create games that can capture the tiny moments in life that make us happy. \
+                        We're hoping to share the many things that warm our hearts, and beyond that, tell an interesting story. \
+                        The games we make are meant to be easy to pick up, fun, and just feel right to play. If our work has caught your eye, \
+                        we hope you'll be willing to join us in playing the games that we really want to make."
 
 type AboutProps = {
   isNight: boolean;
 };
 const AboutSection: React.FC<AboutProps> = ({isNight}) => {
   return (
-    <section className={`min-h-[50vh] w-full flex flex-col md:flex-row items-center justify-center px-6 py-12 ${isNight ? 'dark-theme' : 'light-theme'}`}>
+    <section className={`min-h-[70vh]  mx-auto flex md:flex-row items-center justify-center px-6 py-12 ${isNight ? 'dark-theme' : 'light-theme'}`}>
       {/* Text content */}
-      <div className="max-w-[80vw] lg:w-full text-center items-center md:text-center space-y-4">
-        <p className={`flex flex-row text-lg lg:text-lg ${isNight ? 'text-gray-400': 'text-neutral-600'}`}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-        </p>
+      <div className={`w-[60%] text-center items-center md:text-center space-y-4 p-20 ${isNight ? 'dark-highlight' : 'light-highlight'}`}>
+        <h3 className={`mx-auto text-lg md:text-2xl`}>
+          {aboutStatement}
+        </h3>
       </div>
     </section>
   );

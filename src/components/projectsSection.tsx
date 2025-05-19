@@ -95,7 +95,7 @@ const ImageCarousel: React.FC = () => {
 
 const ProjectsSection: React.FC<ProjectsProps> = ({isNight}) => {
   return (
-    <section className={`min-h-screen w-full flex flex-col md:flex-row items-center justify-center px-6 py-12 ${isNight ? 'dark-theme' : 'light-theme'}`}>
+    <section className={`min-h-[90vh] w-full flex flex-col md:flex-row items-center justify-center px-6 py-12 ${isNight ? 'dark-theme' : 'light-theme'}`}>
       {/* Image and controls */}
       <div
         id="Projects"
@@ -105,7 +105,7 @@ const ProjectsSection: React.FC<ProjectsProps> = ({isNight}) => {
       </div>
 
       {/* Text content */}
-      <div className="w-full md:w-1/2 text-center md:text-left space-y-4">
+      <div className={`w-full md:w-1/2 p-20 text-center md:text-left space-y-4 ${isNight ? 'dark-highlight' : 'light-highlight'}`}>
         <h1 className={`text-4xl md:text-6xl font-bold ${isNight ? 'text-indigo-500': 'text-lime-600'}`}>
           Kitty Maker
         </h1>

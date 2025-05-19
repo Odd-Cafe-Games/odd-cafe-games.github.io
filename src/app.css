@@ -29,8 +29,16 @@ div, section {
   @apply bg-gray-950 text-white
 }
 
+.dark-highlight {
+  @apply bg-gray-800 text-neutral-300 shadow-2xl rounded-2xl
+}
+
 .light-theme {
   @apply bg-amber-100 text-gray-800
+}
+
+.light-highlight {
+  @apply bg-yellow-100 text-neutral-800 shadow-2xl rounded-2xl
 }
 
 .dark-footer {

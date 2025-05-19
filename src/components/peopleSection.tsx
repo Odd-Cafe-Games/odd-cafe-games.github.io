@@ -18,12 +18,12 @@ const Profile: React.FC<ProfileProps> = ({isNight, person, reverse}) => {
       <div className="flex w-full md:w-1/3 justify-center items-center flex-shrink-0">
         <img 
           src={person["image"]}
-          className={`w-50 h-50 rounded-full outline-gray-500 outline-5`}
+          className={`w-2xs h-2xs rounded-full outline-gray-500 outline-5`}
         />
       </div>
 
       {/* Text content */}
-      <div className="flex w-full md:w-2/3 text-center md:text-left space-y-10 p-8">
+      <div className={`flex w-full md:w-2/3 text-center md:text-left space-y-10 p-8 my-8 ${isNight ? 'dark-highlight' : 'light-highlight'}`}>
         <p className={`text-lg md ${isNight ? 'text-gray-400': 'text-neutral-600'}`}>
           {person["description"]}
         </p>
