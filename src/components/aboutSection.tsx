@@ -9,7 +9,7 @@ const images = [
 
 const aboutStatement = "Odd Cafe Games is an ongoing project to create games that can capture the tiny moments in life that make us happy. \
                         We're hoping to share the many things that warm our hearts, and beyond that, tell an interesting story. \
-                        The games we make are meant to be easy to pick up, fun, and just feel right to play. If our work has caught your eye, \
+                        The games we make are meant to be easy to pick up, fun, and feel just right to play. If our work has caught your eye, \
                         we hope you'll be willing to join us in playing the games that we really want to make."
 
 type AboutProps = {
