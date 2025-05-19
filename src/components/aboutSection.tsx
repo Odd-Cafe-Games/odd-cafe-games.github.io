@@ -19,7 +19,7 @@ const AboutSection: React.FC<AboutProps> = ({isNight}) => {
   return (
     <section className={`min-h-[70vh]  mx-auto flex md:flex-row items-center justify-center px-6 py-12 ${isNight ? 'dark-theme' : 'light-theme'}`}>
       {/* Text content */}
-      <div className={`w-[60%] text-center items-center md:text-center space-y-4 p-20 ${isNight ? 'dark-highlight' : 'light-highlight'}`}>
+      <div className={`w-full md:w-[60%] text-center items-center md:text-center space-y-4 p-6 md:p-20 ${isNight ? 'dark-highlight' : 'light-highlight'}`}>
         <h3 className={`mx-auto text-lg md:text-2xl`}>
           {aboutStatement}
         </h3>

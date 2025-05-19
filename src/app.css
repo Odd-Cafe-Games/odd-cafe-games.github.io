@@ -37,6 +37,7 @@ div, section {
   @apply bg-amber-100 text-gray-800
 }
 
+
 .light-highlight {
   @apply bg-yellow-100 text-neutral-800 shadow-2xl rounded-2xl
 }
