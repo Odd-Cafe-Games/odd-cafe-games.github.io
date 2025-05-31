@@ -23,7 +23,7 @@ export default function Home() {
   return <h1 className="text-3x1 font-bold">
           <FullScreenBanner isNight={isNight} handleNightToggle={toggleNight}/>
           <AboutSection isNight = {isNight}/>
-          <PeopleSection isNight = {isNight}/>
+          {/**<PeopleSection isNight = {isNight}/>**/}
           <ProjectsSection isNight={isNight}/>
           <Footer isNight={isNight}/>
           </h1>;
