@@ -20,11 +20,11 @@ export default function Home() {
     setIsNight(!isNight)
   }
 
-  return <h1 className="text-3x1 font-bold">
+  return <h1 className={`text-3x1 font-bold ${isNight ? 'dark-theme' : 'light-theme'}`}>
           <FullScreenBanner isNight={isNight} handleNightToggle={toggleNight}/>
           <AboutSection isNight = {isNight}/>
-          {/**<PeopleSection isNight = {isNight}/>**/}
           <ProjectsSection isNight={isNight}/>
+          {/**<PeopleSection isNight = {isNight}/>**/}
           <Footer isNight={isNight}/>
           </h1>;
       }

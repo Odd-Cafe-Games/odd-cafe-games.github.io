@@ -21,7 +21,7 @@ body {
   }
 }
 
-div, section {
+div, section, h1 {
   transition: background-color 0.7s, color 0.7s;
 }
 
@@ -30,7 +30,7 @@ div, section {
 }
 
 .dark-highlight {
-  @apply bg-gray-800 text-neutral-300 shadow-2xl rounded-2xl
+  @apply bg-gray-800 text-neutral-300 shadow-xl md:shadow-2xl rounded-2xl
 }
 
 .light-theme {
@@ -39,7 +39,7 @@ div, section {
 
 
 .light-highlight {
-  @apply bg-yellow-100 text-neutral-800 shadow-2xl rounded-2xl
+  @apply bg-yellow-100 text-neutral-800 shadow-xl md:shadow-2xl rounded-2xl
 }
 
 .dark-footer {

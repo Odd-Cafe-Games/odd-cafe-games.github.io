@@ -11,11 +11,11 @@ type ProfileProps = {
   reverse: boolean;
 }
 
-const Profile: React.FC<ProfileProps> = ({isNight, person, reverse}) => {
+const Profile: React.FC<ProfileProps> = ({isNight, person}) => {
   return (
-    <section className={`w-full flex flex-wrap flex-col md:flex-row md:px-40 md:py-12 ${isNight ? 'dark-theme' : 'light-theme'} ${reverse ? 'md:flex-row-reverse': ''}`}>
+    <section className={`min-h-[60vh] md:min-h-[20vh] w-full flex flex-wrap flex-row px-4 md:px-10 py-8 ${isNight ? 'dark-theme' : 'light-theme'}`}>
       {/*Profile Image*/}
-      <div className="flex w-full md:w-1/3 justify-center items-center flex-shrink-0 p-5">
+      <div className="flex w-[35%] md:w-[25%] justify-center items-center flex-shrink-0 md:m-4 p-5">
         <img 
           src={person["image"]}
           className={`w-2xs h-2xs rounded-full outline-gray-500 outline-5`}
@@ -23,7 +23,7 @@ const Profile: React.FC<ProfileProps> = ({isNight, person, reverse}) => {
       </div>
 
       {/* Text content */}
-      <div className={`flex mx-auto w-[95%] md:w-2/3 text-center justify-center items-center md:text-left space-y-10 p-4 md:p-8 md:my-8 ${isNight ? 'dark-highlight' : 'light-highlight'}`}>
+      <div className={`flex w-[60%] md:w-[70%] text-center justify-center items-center text-left p-4 md:p-8 md:my-4 ${isNight ? 'dark-highlight' : 'light-highlight'}`}>
         <p className={`text-lg md ${isNight ? 'text-gray-400': 'text-neutral-600'}`}>
           {person["description"]}
         </p>
@@ -36,9 +36,11 @@ const Profile: React.FC<ProfileProps> = ({isNight, person, reverse}) => {
 const PeopleSection: React.FC<PeopleProps> = ({isNight}) => {
   return (
     <>
+    <div className={`grid grid-cols-1 md:grid-cols-2 md:gap-2 md:px-30 md:pb-20 overflow-visible ${isNight ? 'dark-theme' : 'light-theme'}`}>
       {Object.keys(INFO["people"]).map((key, index) => (
-        <Profile isNight={isNight} person={INFO["people"][key]} reverse={index % 2}/>
+        <Profile isNight={isNight} person={INFO["people"][key]}/>
       ))}
+    </div>
     </>
   );
 };

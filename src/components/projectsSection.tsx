@@ -95,7 +95,7 @@ const ImageCarousel: React.FC = () => {
 
 const ProjectsSection: React.FC<ProjectsProps> = ({isNight}) => {
   return (
-    <section className={`min-h-[90vh] w-full flex flex-col lg:flex-row items-center justify-center px-6 py-12 ${isNight ? 'dark-theme' : 'light-theme'}`}>
+    <section className={`min-h-[90vh] w-full flex flex-col lg:flex-row items-center justify-center px-6 py-12 pb-20 ${isNight ? 'dark-theme' : 'light-theme'}`}>
       {/* Image and controls */}
       <div
         id="Projects"

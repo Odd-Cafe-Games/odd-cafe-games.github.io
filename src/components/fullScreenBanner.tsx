@@ -30,7 +30,7 @@ const FullScreenBanner: React.FC<BannerProps> = ({isNight, handleNightToggle}) =
 
   return (
 
-      <div className="relative w-screen h-[95vh] overflow-hidden">
+      <div className="relative w-screen h-[95vh] overflow-hidden mb-20">
         {/* Background layer displaying the new image */}
         <div
               className= "absolute w-full h-full bg-cover bg-center"
