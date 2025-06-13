@@ -36,7 +36,7 @@ const Footer: React.FC<FooterProps> = ({isNight}) => {
         </div>
 
         {/* Right side: Email */}
-        <div className={`text-sm text-center md:text-right ${isNight ? 'text-gray-400' : 'text-gray-800'}`}>
+        <div className={`text-sm text-center md:text-right`}>
           <p>
             Email:{" "}
             <a

@@ -72,5 +72,5 @@ div, section, h1 {
 }
 
 .light-footer {
-  @apply bg-neutral-300 text-gray-900
+  @apply bg-textgreen text-textwhite
 }
