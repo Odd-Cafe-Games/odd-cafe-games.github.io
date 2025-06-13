@@ -4,7 +4,7 @@ import Footer from "../components/footer";
 import ProjectsSection from "../components/projectsSection";
 import PeopleSection from "../components/peopleSection";
 import AboutSection from "../components/aboutSection";
-import {useState} from "react"
+import {useState, useRef} from "react"
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -14,6 +14,8 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
+  const aboutRef = useRef(null);
+
   const [isNight, setIsNight] = useState(true)
 
   const toggleNight = () => {
@@ -21,7 +23,8 @@ export default function Home() {
   }
 
   return <h1 className={`text-3x1 font-bold ${isNight ? 'dark-theme' : 'light-theme'}`}>
-          <FullScreenBanner isNight={isNight} handleNightToggle={toggleNight}/>
+          <FullScreenBanner isNight={isNight} handleNightToggle={toggleNight} aboutRef={aboutRef}/>
+          <div ref={aboutRef}></div>
           <AboutSection isNight = {isNight}/>
           <ProjectsSection isNight={isNight}/>
           {/**<PeopleSection isNight = {isNight}/>**/}

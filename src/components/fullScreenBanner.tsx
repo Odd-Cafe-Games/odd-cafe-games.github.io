@@ -5,9 +5,10 @@ import "../styles/mask.css"
 type BannerProps = {
   isNight: boolean;
   handleNightToggle: () => void;
+  aboutRef: Object;
 }
 
-const FullScreenBanner: React.FC<BannerProps> = ({isNight, handleNightToggle}) => {
+const FullScreenBanner: React.FC<BannerProps> = ({isNight, handleNightToggle, aboutRef}) => {
 
   const [animating, setAnimating] = useState(false)
   const timeoutRef = useRef<number | null>(null);
@@ -38,7 +39,7 @@ const FullScreenBanner: React.FC<BannerProps> = ({isNight, handleNightToggle}) =
         >
           <Header onToggleFunc={animateDayTransition} isNight={isNight}/>
             <div className="absolute flex justify-center items-center bottom-[20%] w-[225px] h-[52px] text-white rounded-full shadow bg-textgreen hover:bg-lime-950 left-1/2 -translate-x-1/2">
-              <p className="text-2xl text-center">
+              <p onClick={() => window.scrollTo({top: aboutRef.current.offsetTop, behavior: "smooth" })} className="text-2xl text-center">
                 Learn More
               </p>
             </div>
