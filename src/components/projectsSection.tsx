@@ -28,7 +28,7 @@ const ImageCarousel: React.FC = () => {
   };
 
   return <>
-  <div className="relative p-4 md:mb-0 w-full max-w-[640px] aspect-[16/9]">
+  <div className="relative p-4 md:mb-0 w-full max-w-[1200px] aspect-[16/9]">
     <div className="relative w-full h-full overflow-visible">
       {images.map((src, index) => {
         const total = images.length;
@@ -62,7 +62,7 @@ const ImageCarousel: React.FC = () => {
           `}
           style={{ zIndex }}
         >
-          <div className="bg-white p-2 shadow-md w-full h-full flex items-center justify-center">
+          <div className="bg-white p-4 shadow-md w-full h-full flex items-center justify-center">
             <img
               src={src}
               alt={`Slide ${index + 1}`}
@@ -76,14 +76,14 @@ const ImageCarousel: React.FC = () => {
       {/* Arrows */}
       <button
         onClick={handlePrev}
-        className="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800/50 text-white text-2xl px-2 py-1 rounded-full z-50"
+        className="absolute left-0 top-1/2 -translate-y-1/2 text-white text-2xl md:text-8xl py-1 rounded z-50"
         aria-label="Previous"
       >
         &lt;
       </button>
       <button
         onClick={handleNext}
-        className="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800/50 text-white text-2xl px-2 py-1 rounded-full z-50"
+        className="absolute right-0 top-1/2 -translate-y-1/2 text-white text-2xl md:text-8xl py-1 rounded z-50"
         aria-label="Next"
       >
         &gt;
@@ -95,24 +95,21 @@ const ImageCarousel: React.FC = () => {
 
 const ProjectsSection: React.FC<ProjectsProps> = ({isNight}) => {
   return (
-    <section className={`min-h-[90vh] w-full flex flex-col lg:flex-row items-center justify-center px-6 py-12 pb-20 ${isNight ? 'dark-theme' : 'light-theme'}`}>
+    <section className={`min-h-[90vh] w-full flex flex-col items-center justify-center space-y-5 md:space-y-15 px-6 py-20 ${isNight ? 'dark-projects' : 'light-projects'}`}>
       {/* Image and controls */}
-      <div
-        id="Projects"
-        className="relative w-full max-w-[800px] mb-10 md:mb-0 md:mr-12 flex flex-col items-center"
-      >
-        <ImageCarousel/>
-      </div>
 
-      {/* Text content */}
-      <div className={`w-full lg:w-1/2 p-8 lg:p-20 text-center md:text-left space-y-4 ${isNight ? 'dark-highlight' : 'light-highlight'}`}>
-        <h1 className={`text-4xl md:text-6xl font-bold ${isNight ? 'text-indigo-500': 'text-lime-600'}`}>
+        <h1 className={`text-4xl md:text-6xl font-bold`}>
           Kitty Maker
         </h1>
-        <p className={`text-lg md:text-xl ${isNight ? 'text-gray-400': 'text-neutral-600'}`}>
+        <ImageCarousel/>
+      {/* Text content */}
+      <div className={`w-[90%] md:w-[40%] p-8 lg:p-20 text-center justify-center md:text-left space-y-4`}>
+        <p className={`text-xl text-center md:text-3xl`}>
           Through various circumstances, you've adopted a strange white kitten,
           and are in charge of raising her.
           <br />
+        </p>
+        <p>
           <br />
           Teach the small cat how to work, play, and build relationships with
           other cats to uncover more about her mysterious past.

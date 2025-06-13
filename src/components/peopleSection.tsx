@@ -23,7 +23,7 @@ const Profile: React.FC<ProfileProps> = ({isNight, person}) => {
       </div>
 
       {/* Text content */}
-      <div className={`flex w-[60%] md:w-[70%] text-center justify-center items-center text-left p-4 md:p-8 md:my-4 ${isNight ? 'dark-highlight' : 'light-highlight'}`}>
+      <div className={`flex w-[60%] md:w-[70%] text-center justify-center items-center text-left p-4 md:p-8 md:my-4`}>
         <p className={`text-lg md ${isNight ? 'text-gray-400': 'text-neutral-600'}`}>
           {person["description"]}
         </p>

@@ -30,13 +30,18 @@ const FullScreenBanner: React.FC<BannerProps> = ({isNight, handleNightToggle}) =
 
   return (
 
-      <div className="relative w-screen h-[95vh] overflow-hidden mb-20">
+      <div className="relative w-screen h-[95vh] overflow-hidden">
         {/* Background layer displaying the new image */}
         <div
               className= "absolute w-full h-full bg-cover bg-center"
               style={{ backgroundImage: isNight ? `url('/assets/banner.png')`: `url('assets/bannerday.png')`, zIndex: 1}}
         >
-          <Header onToggleFunc={animateDayTransition}/>
+          <Header onToggleFunc={animateDayTransition} isNight={isNight}/>
+            <div className="absolute flex justify-center items-center bottom-[20%] w-[225px] h-[52px] text-white rounded-full shadow bg-textgreen hover:bg-lime-950 left-1/2 -translate-x-1/2">
+              <p className="text-2xl text-center">
+                Learn More
+              </p>
+            </div>
         </div>
 
         <div
