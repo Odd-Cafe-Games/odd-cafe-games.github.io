@@ -38,8 +38,8 @@ const FullScreenBanner: React.FC<BannerProps> = ({isNight, handleNightToggle, ab
               style={{ backgroundImage: isNight ? `url('/assets/banner.png')`: `url('assets/bannerday.png')`, zIndex: 1}}
         >
           <Header onToggleFunc={animateDayTransition} isNight={isNight}/>
-            <div className="absolute flex justify-center items-center bottom-[20%] w-[225px] h-[52px] text-white rounded-full shadow bg-textgreen hover:bg-lime-950 left-1/2 -translate-x-1/2">
-              <p onClick={() => window.scrollTo({top: aboutRef.current.offsetTop, behavior: "smooth" })} className="text-2xl text-center">
+            <div onClick={() => window.scrollTo({top: aboutRef.current.offsetTop, behavior: "smooth" })} className={`absolute flex justify-center items-center bottom-[20%] w-[225px] h-[52px] text-white rounded-full shadow ${isNight ? 'bg-darkdefaultbackground hover:bg-slate-950' : 'bg-textgreen hover:bg-lime-950'} left-1/2 -translate-x-1/2`}>
+              <p className="text-2xl text-center">
                 Learn More
               </p>
             </div>
