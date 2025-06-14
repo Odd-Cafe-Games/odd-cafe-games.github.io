@@ -59,7 +59,7 @@ const ImageCarousel: React.FC = () => {
           `}
           style={{ zIndex }}
         >
-          <div className="bg-white p-4 shadow-md w-full h-full flex items-center justify-center">
+          <div className="bg-white p-1 md:p-4 shadow-md w-full h-full flex items-center justify-center">
             <img
               src={src}
               alt={`Slide ${index + 1}`}
