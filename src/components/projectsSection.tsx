@@ -8,7 +8,7 @@ type ProjectsProps = {
 
 const ProjectsSection: React.FC<ProjectsProps> = ({isNight}) => {
   return (
-    <section className={`min-h-[90vh] w-full flex flex-col items-center justify-center space-y-5 md:space-y-15 px-6 py-20 ${isNight ? 'dark-projects' : 'light-projects'}`}>
+    <section className={`min-h-[90vh] w-full flex flex-col items-center justify-center space-y-5 md:space-y-15 py-20 ${isNight ? 'dark-projects' : 'light-projects'}`}>
       {/* Image and controls */}
 
         <h1 className={`text-4xl md:text-6xl font-bold`}>
