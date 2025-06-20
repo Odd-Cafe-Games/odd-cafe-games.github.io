@@ -10,8 +10,13 @@ const Footer: React.FC<FooterProps> = ({isNight}) => {
     <footer className={`w-full py-12 px-6 ${isNight ? 'dark-footer': 'light-footer'}`}>
       <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-6">
         {/* Left side: Social links with icons */}
-        <div className="space-y-2 text-center md:text-left">
-          <div className="flex items-center gap-2 justify-center md:justify-start">
+        <div className="text-center md:text-left">
+          <img className="w-30 h-30" src="assets/icons/oddcafelogo.png"/>
+        </div>
+
+        {/* Right side: Email */}
+        <div className={`text-sm text-center md:text-right`}>
+          <div className="flex items-center gap-4 pt-4 pb-2 justify-center md:justify-start">
             <Twitter size={20} />
             <a
               href="https://twitter.com/OddCafeGames"
@@ -22,8 +27,8 @@ const Footer: React.FC<FooterProps> = ({isNight}) => {
               Twitter
             </a>
           </div>
-          <div className="flex items-center gap-2 justify-center md:justify-start">
-            <Globe size={20} />
+          <div className="flex items-center gap-4 pb-2 justify-center md:justify-start">
+            <img className="w-5 h-4" src="/assets/icons/bluesky_logo.png"/>
             <a
               href="https://bsky.app/profile/oddcafegames.bsky.social"
               target="_blank"
@@ -33,10 +38,6 @@ const Footer: React.FC<FooterProps> = ({isNight}) => {
               Bluesky
             </a>
           </div>
-        </div>
-
-        {/* Right side: Email */}
-        <div className={`text-sm text-center md:text-right`}>
           <p>
             Email:{" "}
             <a
