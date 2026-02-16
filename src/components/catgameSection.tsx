@@ -9,10 +9,6 @@ type CatProps = {
 const CatGame: React.FC<CatProps> = ({isNight}) => {
 	return (<section className={`min-h-[90vh] w-full flex flex-col items-center justify-center space-y-5 md:space-y-15 py-20 ${isNight ? 'dark-projects' : 'light-projects'}`}>
       {/* Image and controls */}
-
-        <h1 className={`text-4xl md:text-6xl font-bold`}>
-          Kitty Maker
-        </h1>
         <ImageCarousel/>
       {/* Text content */}
       <div className={`w-[90%] md:w-[40%] p-8 lg:p-20 text-center justify-center md:text-left space-y-4`}>
